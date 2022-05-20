@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlantShop.Api.Models;
+using PlantShop.Data.Entities;
 
-namespace PlantShop.Api.Data
+namespace PlantShop.Data.Context
 {
     public class PlantContext : DbContext
     {

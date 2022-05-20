@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PlantShop.Api.Models;
-using PlantShop.Api.Repository;
+using PlantShop.Data.Entities;
+using PlantShop.Service.Repository;
 
 namespace PlantShop.Api.Controllers
 {
@@ -10,11 +10,11 @@ namespace PlantShop.Api.Controllers
     [Route("api/plant")]
     public class PlantController : ControllerBase
     {
-        private readonly IPlantRepository _plantService;
+        private readonly IPlantRepository _plantRepository;
 
-        public PlantController(IPlantRepository plantService)
+        public PlantController(IPlantRepository plantRepository)
         {
-            _plantService = plantService;
+            _plantRepository = plantRepository;
         }
 
         [HttpPost]
@@ -26,7 +26,7 @@ namespace PlantShop.Api.Controllers
                 return BadRequest();
             }
 
-            var model = await _plantService.AddPlant(plant);
+            var model = await _plantRepository.InsertPlant(plant);
 
             return Ok(model);
         }
@@ -35,18 +35,25 @@ namespace PlantShop.Api.Controllers
         [Route("/all")]
         public async Task<IActionResult> Get()
         {
-            var plants = await _plantService.GetPlants();
+            var plants = await _plantRepository.GetPlants();
 
             return Ok(plants);
         }
 
         [HttpGet]
-        [Route("/{id:int}")]
+        [Route("/{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var plant = await _plantService.GetPlant(id);
+            var plant = await _plantRepository.GetPlantById(id);
 
             return Ok(plant);
+        }
+
+        [HttpDelete]
+        [Route("/{id}")]
+        public void Delete(int id)
+        {
+            _plantRepository.DeletePlant(id);
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using PlantShop.Api.Models;
+﻿using PlantShop.Data.Entities;
 
-namespace PlantShop.Api.Data
+namespace PlantShop.Data.Context
 {
     public static class DbInitializer
     {
@@ -14,7 +14,7 @@ namespace PlantShop.Api.Data
                 return;   // DB has been seeded
             }
 
-            var plant = new Plant?[]
+            var plant = new Plant[]
             {
             new() {Name = "Orchidee", Description = "Very nice"}
             };

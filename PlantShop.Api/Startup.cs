@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlantShop.Api.Data;
-using PlantShop.Api.Repository;
+using PlantShop.Data.Context;
+using PlantShop.Service.Repository;
 
 namespace PlantShop.Api
 {
@@ -26,8 +26,8 @@ namespace PlantShop.Api
                     apiDescriptions.First());
             });
 
-            services.AddSingleton<IPlantRepository, PlantRepository>();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IPlantRepository, PlantRepository>();
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc().AddControllersAsServices();
         }
 
