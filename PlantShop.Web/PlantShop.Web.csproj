@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebApplication3\PlantShop.Api.csproj" />
+    <ProjectReference Include="..\PlantShop.Api\PlantShop.Api.csproj" />
   </ItemGroup>
 
 </Project>
