@@ -16,7 +16,7 @@ namespace PlantShop.Api.Data
 
             var plant = new Plant?[]
             {
-            new() {Name = "Orgidee"}
+            new() {Name = "Orchidee", Description = "Very nice"}
             };
 
             foreach (var p in plant)

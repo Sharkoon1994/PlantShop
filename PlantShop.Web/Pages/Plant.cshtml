@@ -5,8 +5,6 @@
     ViewData["Title"] = "Plant";
 }
 
-<h1>Plant</h1>
-
 <h4>Plant</h4>
 <hr />
 <div class="row">
@@ -19,14 +17,11 @@
                 <span asp-validation-for="Plant.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <br>
+                <input type="submit" value="Create" class="btn btn-primary"/>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {
