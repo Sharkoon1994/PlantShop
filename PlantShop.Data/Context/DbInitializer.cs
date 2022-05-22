@@ -1,28 +1,45 @@
-﻿using PlantShop.Data.Entities;
+﻿using PlantShop.Data.Models;
 
 namespace PlantShop.Data.Context
 {
     public static class DbInitializer
     {
-        public static async Task Initialize(PlantContext context)
+        public static async Task Initialize(PlantShopContext context)
         {
             await context.Database.EnsureCreatedAsync();
 
-            // Look for any students.
-            if (context.Plants.Any())
+            if (!context.Plants.Any())
             {
-                return;   // DB has been seeded
+
+                var plant = new Plant[]
+                {
+                    new()
+                    {
+                        Name = "Orchidee",
+                        Description = "Starting plant",
+                        Price = 2.59
+                    }
+                };
+
+                await context.Plants.AddRangeAsync(plant);
             }
 
-            var plant = new Plant[]
-            {
-            new() {Name = "Orchidee", Description = "Very nice"}
-            };
+            //if (!context.Orders.Any())
+            //{
 
-            foreach (var p in plant)
-            {
-                await context.Plants.AddAsync(p!);
-            }
+            //    var order = new Order[]
+            //    {
+            //        new()
+            //        {
+            //            Item = "Orchidee",
+            //            Amount = 1,
+            //            TotalPrice = 2.59
+            //        }
+            //    };
+
+            //    await context.Orders.AddRangeAsync(order);
+            //}
+
 
             await context.SaveChangesAsync();
         }

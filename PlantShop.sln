@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Api", "PlantShop.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Web", "PlantShop.Web\PlantShop.Web.csproj", "{E133D26F-63B9-4AE5-B3F8-21010741F0F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantShop.Api.Tests", "PlantShop.Api.Tests\PlantShop.Api.Tests.csproj", "{4C4F055E-0638-4A6B-9E96-1DA7A8D84F62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Api.Tests", "PlantShop.Api.Tests\PlantShop.Api.Tests.csproj", "{4C4F055E-0638-4A6B-9E96-1DA7A8D84F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantShop.Data", "PlantShop.Data\PlantShop.Data.csproj", "{F1AC7BE9-B388-415C-95D8-587F50092FFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Data", "PlantShop.Data\PlantShop.Data.csproj", "{F1AC7BE9-B388-415C-95D8-587F50092FFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantShop.Service", "PlantShop.Service\PlantShop.Service.csproj", "{9F139481-8A7F-4E0E-B0BB-3820EA19666D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Service", "PlantShop.Service\PlantShop.Service.csproj", "{9F139481-8A7F-4E0E-B0BB-3820EA19666D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

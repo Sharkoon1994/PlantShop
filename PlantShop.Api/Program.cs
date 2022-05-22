@@ -21,7 +21,7 @@ namespace PlantShop.Api
             var services = scope.ServiceProvider;
             try
             {
-                var context = services.GetRequiredService<PlantContext>();
+                var context = services.GetRequiredService<PlantShopContext>();
                 await DbInitializer.Initialize(context);
             }
             catch (Exception ex)

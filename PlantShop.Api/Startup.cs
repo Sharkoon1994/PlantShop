@@ -15,7 +15,7 @@ namespace PlantShop.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PlantContext>(options =>
+            services.AddDbContext<PlantShopContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
@@ -26,7 +26,8 @@ namespace PlantShop.Api
                     apiDescriptions.First());
             });
 
-            services.AddScoped<IPlantRepository, PlantRepository>();
+            services.AddScoped<PlantRepository>();
+            services.AddScoped<OrderRepository>();
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc().AddControllersAsServices();
         }
