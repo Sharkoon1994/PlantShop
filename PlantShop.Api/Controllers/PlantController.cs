@@ -48,7 +48,7 @@ namespace PlantShop.Api.Controllers
                 return BadRequest("Request is empty.");
             }
 
-            var plant = await _plantService.Add(request!.Name, request.Description, request.Price);
+            var plant = await _plantService.Add(request.Name, request.Description, request.Price);
 
             return Created("", plant);
         }
