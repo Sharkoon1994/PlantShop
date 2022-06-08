@@ -1,4 +1,4 @@
-using PlantShop.Data.Context;
+using PlantShop.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
