@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PlantShop.Contracts
+namespace PlantShop.Api.Models
 {
-    public class PlantRequest
+    public class PlantModel
     {
         public int Id { get; set; }
 

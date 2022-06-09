@@ -17,7 +17,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\PlantShop.Contracts\PlantShop.Contracts.csproj" />
 		<ProjectReference Include="..\PlantShop.Service\PlantShop.Service.csproj" />
 	</ItemGroup>
 
