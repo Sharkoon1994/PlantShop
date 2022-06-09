@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Service", "PlantS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Api", "PlantShop.Api\PlantShop.Api.csproj", "{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "plantshop.web", "PlantShop.Web\plantshop.web.esproj", "{B5E2A69E-C9C3-4AF9-A5DF-882F4D12FBB7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,12 +33,6 @@ Global
 		{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5E2A69E-C9C3-4AF9-A5DF-882F4D12FBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5E2A69E-C9C3-4AF9-A5DF-882F4D12FBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5E2A69E-C9C3-4AF9-A5DF-882F4D12FBB7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{B5E2A69E-C9C3-4AF9-A5DF-882F4D12FBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5E2A69E-C9C3-4AF9-A5DF-882F4D12FBB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5E2A69E-C9C3-4AF9-A5DF-882F4D12FBB7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
