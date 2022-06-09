@@ -2,6 +2,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using PlantShop.Api.Controllers;
+using PlantShop.Api.Models;
 using PlantShop.Data.Entities;
 using PlantShop.Service;
 using Xunit;

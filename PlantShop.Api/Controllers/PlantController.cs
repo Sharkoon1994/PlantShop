@@ -1,6 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PlantShop.Api.Models;
 using PlantShop.Data.Entities;
 using PlantShop.Service;
 
