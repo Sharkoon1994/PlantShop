@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Web", "PlantShop.Web\PlantShop.Web.csproj", "{E133D26F-63B9-4AE5-B3F8-21010741F0F5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Api.Tests", "PlantShop.Api.Tests\PlantShop.Api.Tests.csproj", "{4C4F055E-0638-4A6B-9E96-1DA7A8D84F62}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Data", "PlantShop.Data\PlantShop.Data.csproj", "{F1AC7BE9-B388-415C-95D8-587F50092FFB}"
@@ -13,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Service", "PlantS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Contracts", "PlantShop.Contracts\PlantShop.Contracts.csproj", "{CB7D80E9-8C2C-43C9-B6C6-C4532ABF5536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantShop.Api", "PlantShop.Api\PlantShop.Api.csproj", "{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Api", "PlantShop.Api\PlantShop.Api.csproj", "{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E133D26F-63B9-4AE5-B3F8-21010741F0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E133D26F-63B9-4AE5-B3F8-21010741F0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E133D26F-63B9-4AE5-B3F8-21010741F0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E133D26F-63B9-4AE5-B3F8-21010741F0F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C4F055E-0638-4A6B-9E96-1DA7A8D84F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C4F055E-0638-4A6B-9E96-1DA7A8D84F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C4F055E-0638-4A6B-9E96-1DA7A8D84F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
