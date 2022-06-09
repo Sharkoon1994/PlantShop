@@ -1,7 +1,6 @@
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PlantShop.Contracts;
 using PlantShop.Data.Entities;
 using PlantShop.Service;
 
@@ -41,7 +40,7 @@ namespace PlantShop.Api.Controllers
         [HttpPost]
         [Route("add")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
-        public async Task<ActionResult> Post([FromBody] PlantRequest? request)
+        public async Task<ActionResult> Post([FromBody] PlantModel? request)
         {
             if (request?.Name == null)
             {

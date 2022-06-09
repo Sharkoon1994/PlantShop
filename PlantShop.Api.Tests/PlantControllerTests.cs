@@ -2,7 +2,6 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using PlantShop.Api.Controllers;
-using PlantShop.Contracts;
 using PlantShop.Data.Entities;
 using PlantShop.Service;
 using Xunit;
@@ -79,7 +78,7 @@ namespace PlantShop.Api.Tests
         public async Task Post_WithInvalidRequest_ShouldReturnBadRequest()
         {
             // Arrange
-            var request = new PlantRequest
+            var request = new PlantModel
             {
                 Price = 2.59
             };
@@ -123,9 +122,9 @@ namespace PlantShop.Api.Tests
             result.Should().BeOfType<NoContentResult>();
         }
 
-        private static Task<PlantRequest> CreateMockRequest()
+        private static Task<PlantModel> CreateMockRequest()
         {
-            return Task.FromResult(new PlantRequest
+            return Task.FromResult(new PlantModel
             {
                 Id = 1,
                 Description = "Flower",
