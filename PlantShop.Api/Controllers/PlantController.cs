@@ -26,7 +26,7 @@ namespace PlantShop.Api.Controllers
         }
 
         [HttpGet("get/{id:int}")]
-        public async Task<ActionResult<Plant>> Get(int id)
+        public async Task<ActionResult> GetById(int id)
         {
             var plant = await _plantService.Get(id);
 
@@ -41,16 +41,31 @@ namespace PlantShop.Api.Controllers
         [HttpPost]
         [Route("add")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
-        public async Task<IActionResult> Post([FromBody] PlantRequest? request)
+        public async Task<ActionResult> Post([FromBody] PlantRequest? request)
         {
-            if (request == null)
+            if (request?.Name == null)
             {
-                return BadRequest("Request is empty.");
+                return BadRequest();
             }
 
             var plant = await _plantService.Add(request.Name, request.Description, request.Price);
 
             return Created("", plant);
+        }
+
+        [HttpDelete("delete/{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var plant = await _plantService.Get(id);
+
+            if (plant == null)
+            {
+                return NoContent();
+            }
+
+            await _plantService.Delete(id);
+
+            return Ok();
         }
     }
 }
