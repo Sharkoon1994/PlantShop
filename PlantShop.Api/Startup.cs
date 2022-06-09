@@ -1,11 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlantShop.Data.Context;
-using PlantShop.Service.Repository;
+using Microsoft.OpenApi.Models;
+using PlantShop.Data;
+using PlantShop.Service;
 
 namespace PlantShop.Api
 {
     public class Startup
     {
+        private const string SwaggerTitle = "PlantShop Api";
+        private const string SwaggerJsonEndpoint = "/swagger/v1/swagger.json";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -18,18 +22,16 @@ namespace PlantShop.Api
             services.AddDbContext<PlantShopContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDatabaseDeveloperPageExceptionFilter();
-            services.AddControllers();
-            services.AddSwaggerGen(options =>
+            services.AddSwaggerGen(o =>
             {
-                options.ResolveConflictingActions(apiDescriptions =>
-                    apiDescriptions.First());
+                o.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = SwaggerTitle, Version = "v1"
+                });
             });
 
-            services.AddScoped<PlantRepository>();
-            services.AddScoped<OrderRepository>();
-            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddMvc().AddControllersAsServices();
+            services.AddTransient<IPlantService, PlantService>();
+            services.AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -39,12 +41,17 @@ namespace PlantShop.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-            app.UseRouting();
-            app.UseAuthorization();
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(s =>
+            {
+                s.SwaggerEndpoint(SwaggerJsonEndpoint, SwaggerTitle);
+            });
+
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+            });
         }
     }
 }
