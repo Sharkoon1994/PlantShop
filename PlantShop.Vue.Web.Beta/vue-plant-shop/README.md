@@ -1,4 +1,4 @@
-# hello-vue
+# vue-plant-shop
 
 ## Project setup
 ```
