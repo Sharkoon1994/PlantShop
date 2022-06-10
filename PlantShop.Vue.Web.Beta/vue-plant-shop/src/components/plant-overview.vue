@@ -1,46 +1,52 @@
 <template>
   <div class="content-container">
     <div class="section content-title-group">
-      <h2 class="title">Planten</h2>
+      <h2 class="title">Overzicht</h2>
     </div>
     <div class="columns">
-      <div class="column is-8">
-        <div class="card edit-detail">
-          <header class="card-header">
-            <p class="card-header-title"></p>
-          </header>
-          <div class="card-content">
-            <div class="content">
-              <div class="field">
-                <label class="label" for="id">Id</label>
-                <label class="input" id="id" readonly></label>
-              </div>
-              <div class="field">
-                <label class="label" for="name">Naam</label>
-                <input class="input" id="name" />
-              </div>
-              <div class="field">
-                <label class="label" for="description">Omschrijving</label>
-                <textarea class="input" id="description" type="text" />
-              </div>
-              <div class="field">
-                <label class="label" for="price">Prijs</label>
-                <input class="number" id="price" step="0.01" />
-              </div>
+      <div class="column is-3">
+        <header class="card-header">
+          <p class="card-header-title">Planten</p>
+        </header>
+        <!-- Maak een lijst aan. -->
+        <ul class=" list is-hoverable">
+          <li v-for="plant in plants" :key="plant.id">
+          <a class="list-item" @click="selectedPlant = plant">
+            <span>{{ plant.name }}</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-3">
+        <header class="card-header">
+          <p class="card-header-title">{{ message }}</p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <div class="field">
+              <label class="label" for="id">Id:</label>
+              <label class="input" id="id" readonly> {{ selectedPlant.id }}
+              </label>
+            </div>
+            <div class="field">
+              <label class="label" for="name">Naam:</label>
+              <input
+                class="input"
+                id="name"
+                v-model="selectedPlant.name"
+              />
+            </div> 
+            <div class="field">
+              <label class="label" for="description">Beschrijving:</label>
+              <input
+                class="input"
+                id="description"
+                v-model="selectedPlant.description"
+              />
             </div>
           </div>
-          <footer class="card-footer">
-            <button class="link card-footer-item cancel-button">
-              <i class="fas fa-undo"></i>
-              <span>Cancel</span>
-            </button>
-            <button class="link card-footer-item">
-              <i class="fas fa-save"></i>
-              <span>Save</span>
-            </button>
-          </footer>
         </div>
-        <div class="notification is-info"></div>
       </div>
     </div>
   </div>
@@ -49,5 +55,32 @@
 <script>
 export default {
   name: 'PlantOverview',
+  data() {
+    return {
+      selectedPlant: {
+        id: '',
+        name: '',
+        description: ''
+      },
+      plants: [
+        {
+          id: 1,
+          name: 'Gras',
+          description: 'Heel erg groen'
+        },
+        {
+          id: 2,
+          name: 'Zonnebloem',
+          description: 'Houd van de zon'
+        },
+        {
+          id: 3,
+          name: 'Boterbloem',
+          description: 'Gemaakt van boter'
+        }
+      ],
+      message: 'Plant',
+    };
+  },
 };
 </script>

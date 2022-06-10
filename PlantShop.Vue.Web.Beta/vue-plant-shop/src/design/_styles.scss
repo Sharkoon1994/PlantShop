@@ -127,7 +127,7 @@ div.card-content {
   }
   .description {
     font-size: 20px;
-    color: #999;
+    color: rgb(153, 153, 153);
   }
   background-color: $shade-light;
 }
@@ -182,8 +182,8 @@ button.link {
   cursor: pointer;
 }
 
-input.invalid,
-textarea.invalid,
-select.invalid {
-  border-left: 10px red solid !important;
-}
+// input.invalid,
+// textarea.invalid,
+// select.invalid {
+//   border-left: 10px red solid !important;
+// }

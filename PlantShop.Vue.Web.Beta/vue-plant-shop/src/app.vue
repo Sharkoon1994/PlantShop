@@ -3,6 +3,7 @@
     <HeaderBar />
     <div class="main-section columns">
       <main class="column">
+        <PlantCreate />
         <PlantOverview />
       </main>
     </div>
@@ -11,11 +12,16 @@
 
 <script>
 import HeaderBar from '@/components/header-bar';
+import PlantCreate from '@/components/plant-create';
 import PlantOverview from '@/components/plant-overview';
 
 export default {
   name: 'App',
-  components: { HeaderBar, PlantOverview },
+  components: { 
+    HeaderBar, 
+    PlantCreate, 
+    PlantOverview 
+  },
 };
 </script>
 
