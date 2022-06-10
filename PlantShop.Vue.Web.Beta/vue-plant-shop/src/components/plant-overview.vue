@@ -11,13 +11,15 @@
         <!-- Maak een lijst aan. -->
         <ul class=" list is-hoverable">
           <li v-for="plant in plants" :key="plant.id">
-          <a class="list-item" @click="selectedPlant = plant">
-            <span>{{ plant.name }}</span></a>
+          <a class="list-item"
+          @click="selectedPlant = plant"
+          :class="{ 'is-active': selectedPlant == plant}">
+          <span>{{ plant.name }}</span></a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="columns">
+    <div class="columns" v-if="selectedPlant">
       <div class="column is-3">
         <header class="card-header">
           <p class="card-header-title">{{ message }}</p>
@@ -38,6 +40,17 @@
               />
             </div> 
             <div class="field">
+              <label for="show" class="checkbox">
+                Meer tonen:
+                <input
+                  type="checkbox"
+                  class="is-primary"
+                  id="ShowContent"
+                  v-model="showContent"
+                />
+              </label>
+            </div>
+            <div class="field" v-show="showContent">
               <label class="label" for="description">Beschrijving:</label>
               <input
                 class="input"
@@ -55,13 +68,11 @@
 <script>
 export default {
   name: 'PlantOverview',
+  // Properties
   data() {
     return {
-      selectedPlant: {
-        id: '',
-        name: '',
-        description: ''
-      },
+      selectedPlant: undefined,
+      showContent: false,
       plants: [
         {
           id: 1,

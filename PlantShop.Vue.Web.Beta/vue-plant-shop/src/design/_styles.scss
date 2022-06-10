@@ -116,9 +116,12 @@ header {
     }
   }
 }
+
 ul.list {
   box-shadow: none;
+  background-color: $shade-light;
 }
+
 div.card-content {
   background-color: $shade-light;
   .name {
@@ -182,8 +185,18 @@ button.link {
   cursor: pointer;
 }
 
-// input.invalid,
-// textarea.invalid,
-// select.invalid {
-//   border-left: 10px red solid !important;
-// }
+.list-item {
+  font-size: large;
+  color: #000;
+  &:hover {
+    color: $accent-color;
+  }
+  &.is-active {
+    background-color: $accent-color;
+    border-radius: 0;
+    border-top: #fff solid 1px;
+    border-bottom: #fff solid 1px;
+    color: #fff;
+  }
+  margin-left: auto;
+}
