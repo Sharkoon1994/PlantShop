@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Api.Tests", "Plan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantShop.Api", "PlantShop.Api\PlantShop.Api.csproj", "{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantShop.Web", "PlantShop.Web\PlantShop.Web.csproj", "{75C5BB4C-E403-4E3A-80F6-1D8D1B1DB750}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1DF5E4D-2FA7-4DCC-8FCC-F2FC1CF5442D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C5BB4C-E403-4E3A-80F6-1D8D1B1DB750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C5BB4C-E403-4E3A-80F6-1D8D1B1DB750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C5BB4C-E403-4E3A-80F6-1D8D1B1DB750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C5BB4C-E403-4E3A-80F6-1D8D1B1DB750}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
