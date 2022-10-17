@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using PlantShop.Data;
-using PlantShop.Service;
+using PlantShop.Api.Context;
+using PlantShop.Api.Service;
 
 namespace PlantShop.Api
 {
@@ -34,7 +34,7 @@ namespace PlantShop.Api
             services.AddControllers();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {

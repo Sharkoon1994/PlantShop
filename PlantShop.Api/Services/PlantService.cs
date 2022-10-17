@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlantShop.Data;
-using PlantShop.Data.Entities;
+using PlantShop.Api.Context;
+using PlantShop.Api.Models;
 
-namespace PlantShop.Service
+namespace PlantShop.Api.Service
 {
     public class PlantService : IPlantService
     {
@@ -13,30 +13,26 @@ namespace PlantShop.Service
             _context = context;
         }
 
-        public async Task<Plant?> Get(int id)
+        public async Task<PlantModel?> Get(int id)
         {
-            var plant = await _context.Plants!.FindAsync(id).ConfigureAwait(false);
-            
-            return plant;
+            return await _context.Plants!.FindAsync(id).ConfigureAwait(false);
         }
 
-        public async Task<List<Plant>> GetAll()
+        public async Task<List<PlantModel>> GetAll()
         {
-             var plant = await _context.Set<Plant>().ToListAsync().ConfigureAwait(false);
-
-             return plant;
+            return await _context.Set<PlantModel>().ToListAsync().ConfigureAwait(false);
         }
 
-        public async Task<Plant> Add(string? name, string? description, double price)
+        public async Task<PlantModel> Add(string? name, string? description, double price)
         {
-            var plant = new Plant
+            var plant = new PlantModel
             {
                 Name = name,
                 Description = description,
                 Price = price
             };
 
-            await _context.Set<Plant>().AddAsync(plant);
+            await _context.Set<PlantModel>().AddAsync(plant);
             await _context.SaveChangesAsync().ConfigureAwait(false);
 
             return plant;
@@ -46,7 +42,8 @@ namespace PlantShop.Service
         {
             var plant = await Get(id);
 
-            if (plant != null) _context.Set<Plant>().Remove(plant);
+            if (plant != null) _context.Set<PlantModel>().Remove(plant);
+
             await _context.SaveChangesAsync().ConfigureAwait(false);
         }
     }

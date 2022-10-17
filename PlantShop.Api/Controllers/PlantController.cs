@@ -2,8 +2,7 @@ using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PlantShop.Api.Models;
-using PlantShop.Data.Entities;
-using PlantShop.Service;
+using PlantShop.Api.Service;
 
 namespace PlantShop.Api.Controllers
 {
@@ -20,7 +19,7 @@ namespace PlantShop.Api.Controllers
         }
 
         [HttpGet("get")]
-        public async Task<List<Plant>> Get()
+        public async Task<List<PlantModel>> Get()
         {
             return await _plantService.GetAll();
         }

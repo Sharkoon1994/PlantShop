@@ -3,8 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using PlantShop.Api.Controllers;
 using PlantShop.Api.Models;
-using PlantShop.Data.Entities;
-using PlantShop.Service;
+using PlantShop.Api.Service;
 using Xunit;
 
 namespace PlantShop.Api.Tests
@@ -23,7 +22,7 @@ namespace PlantShop.Api.Tests
         public async Task GetById_WithValidEntity_ShouldReturnOk()
         {
             // Arrange
-            _plantService.Get(Arg.Any<int>()).Returns(new Plant
+            _plantService.Get(Arg.Any<int>()).Returns(new PlantModel
             {
                 Id = 1,
                 Name = "test",
@@ -35,7 +34,7 @@ namespace PlantShop.Api.Tests
             var result = await _sut.GetById(1);
 
             // Assert
-            result.Should().NotBeNull(); 
+            result.Should().NotBeNull();
             result.Should().BeOfType<OkObjectResult>();
         }
 
@@ -96,7 +95,7 @@ namespace PlantShop.Api.Tests
         public async Task Delete_WithValidEntity_ShouldReturnOk()
         {
             // Arrange
-            _plantService.Get(Arg.Any<int>()).Returns(new Plant
+            _plantService.Get(Arg.Any<int>()).Returns(new PlantModel
             {
                 Id = 1,
                 Name = "test",
